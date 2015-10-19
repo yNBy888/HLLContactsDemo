@@ -15,6 +15,12 @@
 		180214EB1BD48E41006E24E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 180214E91BD48E41006E24E8 /* LaunchScreen.storyboard */; };
 		180214F61BD48E41006E24E8 /* HLLContactsDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 180214F51BD48E41006E24E8 /* HLLContactsDemoTests.m */; };
 		180215011BD48E41006E24E8 /* HLLContactsDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 180215001BD48E41006E24E8 /* HLLContactsDemoUITests.m */; };
+		1802150F1BD49091006E24E8 /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1802150E1BD49091006E24E8 /* Contacts.framework */; };
+		180215111BD49099006E24E8 /* ContactsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 180215101BD49099006E24E8 /* ContactsUI.framework */; };
+		180215141BD4BAA2006E24E8 /* HLLDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180215131BD4BAA2006E24E8 /* HLLDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
+		1802151A1BD4BF65006E24E8 /* HLLLabeledCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 180215191BD4BF65006E24E8 /* HLLLabeledCell.m */; settings = {ASSET_TAGS = (); }; };
+		1802151C1BD4C3FD006E24E8 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1802151B1BD4C3FD006E24E8 /* icon.png */; settings = {ASSET_TAGS = (); }; };
+		180215201BD4DB32006E24E8 /* ODRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 1802151F1BD4DB32006E24E8 /* ODRefreshControl.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +57,15 @@
 		180214FC1BD48E41006E24E8 /* HLLContactsDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HLLContactsDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		180215001BD48E41006E24E8 /* HLLContactsDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLLContactsDemoUITests.m; sourceTree = "<group>"; };
 		180215021BD48E41006E24E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1802150E1BD49091006E24E8 /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
+		180215101BD49099006E24E8 /* ContactsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ContactsUI.framework; path = System/Library/Frameworks/ContactsUI.framework; sourceTree = SDKROOT; };
+		180215121BD4BAA2006E24E8 /* HLLDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLDetailViewController.h; sourceTree = "<group>"; };
+		180215131BD4BAA2006E24E8 /* HLLDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLDetailViewController.m; sourceTree = "<group>"; };
+		180215181BD4BF65006E24E8 /* HLLLabeledCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLLabeledCell.h; sourceTree = "<group>"; };
+		180215191BD4BF65006E24E8 /* HLLLabeledCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLLabeledCell.m; sourceTree = "<group>"; };
+		1802151B1BD4C3FD006E24E8 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		1802151E1BD4DB32006E24E8 /* ODRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODRefreshControl.h; sourceTree = "<group>"; };
+		1802151F1BD4DB32006E24E8 /* ODRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ODRefreshControl.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +73,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				180215111BD49099006E24E8 /* ContactsUI.framework in Frameworks */,
+				1802150F1BD49091006E24E8 /* Contacts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +98,8 @@
 		180214CF1BD48E41006E24E8 = {
 			isa = PBXGroup;
 			children = (
+				180215101BD49099006E24E8 /* ContactsUI.framework */,
+				1802150E1BD49091006E24E8 /* Contacts.framework */,
 				180214DA1BD48E41006E24E8 /* HLLContactsDemo */,
 				180214F41BD48E41006E24E8 /* HLLContactsDemoTests */,
 				180214FF1BD48E41006E24E8 /* HLLContactsDemoUITests */,
@@ -106,8 +125,14 @@
 				180214E11BD48E41006E24E8 /* ViewController.h */,
 				180214E21BD48E41006E24E8 /* ViewController.m */,
 				180214E41BD48E41006E24E8 /* Main.storyboard */,
+				180215121BD4BAA2006E24E8 /* HLLDetailViewController.h */,
+				180215131BD4BAA2006E24E8 /* HLLDetailViewController.m */,
+				180215181BD4BF65006E24E8 /* HLLLabeledCell.h */,
+				180215191BD4BF65006E24E8 /* HLLLabeledCell.m */,
 				180214E71BD48E41006E24E8 /* Assets.xcassets */,
 				180214E91BD48E41006E24E8 /* LaunchScreen.storyboard */,
+				1802151D1BD4DB32006E24E8 /* ODRefreshControl */,
+				1802151B1BD4C3FD006E24E8 /* icon.png */,
 				180214EC1BD48E41006E24E8 /* Info.plist */,
 				180214DB1BD48E41006E24E8 /* Supporting Files */,
 			);
@@ -138,6 +163,15 @@
 				180215021BD48E41006E24E8 /* Info.plist */,
 			);
 			path = HLLContactsDemoUITests;
+			sourceTree = "<group>";
+		};
+		1802151D1BD4DB32006E24E8 /* ODRefreshControl */ = {
+			isa = PBXGroup;
+			children = (
+				1802151E1BD4DB32006E24E8 /* ODRefreshControl.h */,
+				1802151F1BD4DB32006E24E8 /* ODRefreshControl.m */,
+			);
+			path = ODRefreshControl;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,6 +277,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1802151C1BD4C3FD006E24E8 /* icon.png in Resources */,
 				180214EB1BD48E41006E24E8 /* LaunchScreen.storyboard in Resources */,
 				180214E81BD48E41006E24E8 /* Assets.xcassets in Resources */,
 				180214E61BD48E41006E24E8 /* Main.storyboard in Resources */,
@@ -272,6 +307,9 @@
 			files = (
 				180214E31BD48E41006E24E8 /* ViewController.m in Sources */,
 				180214E01BD48E41006E24E8 /* AppDelegate.m in Sources */,
+				1802151A1BD4BF65006E24E8 /* HLLLabeledCell.m in Sources */,
+				180215141BD4BAA2006E24E8 /* HLLDetailViewController.m in Sources */,
+				180215201BD4DB32006E24E8 /* ODRefreshControl.m in Sources */,
 				180214DD1BD48E41006E24E8 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

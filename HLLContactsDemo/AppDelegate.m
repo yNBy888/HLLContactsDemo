@@ -8,6 +8,46 @@
 
 #import "AppDelegate.h"
 
+
+@implementation UIColor (Common)
+
++ (UIColor *)colorWithHexString:(NSString *)stringToConvert {
+    NSScanner *scanner = [NSScanner scannerWithString:stringToConvert];
+    unsigned hexNum;
+    if (![scanner scanHexInt:&hexNum]) return nil;
+    return [UIColor colorWithRGBHex:hexNum];
+}
+
+
++ (UIColor *)colorWithRGBHex:(UInt32)hex {
+    int r = (hex >> 16) & 0xFF;
+    int g = (hex >> 8) & 0xFF;
+    int b = (hex) & 0xFF;
+    
+    return [UIColor colorWithRed:r / 255.0f
+                           green:g / 255.0f
+                            blue:b / 255.0f
+                           alpha:1.0f];
+}
+@end
+
+
+@implementation UIImage (Commom)
+
++(UIImage *)imageWithColor:(UIColor *)aColor{
+    return [UIImage imageWithColor:aColor withFrame:CGRectMake(0, 0, 1, 1)];
+}
+
++(UIImage *)imageWithColor:(UIColor *)aColor withFrame:(CGRect)aFrame{
+    UIGraphicsBeginImageContext(aFrame.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, [aColor CGColor]);
+    CGContextFillRect(context, aFrame);
+    UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return img;
+}
+@end
 @interface AppDelegate ()
 
 @end
@@ -16,30 +56,17 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    [self configureNavigatioinBar];
     return YES;
 }
+- (void) configureNavigatioinBar{
 
-- (void)applicationWillResignActive:(UIApplication *)application {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+    UINavigationBar *navigationBarAppearance = [UINavigationBar appearance];
+    [navigationBarAppearance setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithHexString: @"0x006633"]] forBarMetrics:UIBarMetricsDefault];
+    
+    [navigationBarAppearance setTintColor:[UIColor whiteColor]];//返回按钮的箭头颜色
+    NSDictionary *textAttributes = @{NSFontAttributeName: [UIFont boldSystemFontOfSize:18],
+                                     NSForegroundColorAttributeName: [UIColor whiteColor]};
+    [navigationBarAppearance setTitleTextAttributes:textAttributes];
 }
-
-- (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-}
-
-- (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-}
-
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-}
-
-- (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-}
-
 @end
