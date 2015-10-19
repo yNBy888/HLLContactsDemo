@@ -1,0 +1,519 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		180214DD1BD48E41006E24E8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 180214DC1BD48E41006E24E8 /* main.m */; };
+		180214E01BD48E41006E24E8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 180214DF1BD48E41006E24E8 /* AppDelegate.m */; };
+		180214E31BD48E41006E24E8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180214E21BD48E41006E24E8 /* ViewController.m */; };
+		180214E61BD48E41006E24E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 180214E41BD48E41006E24E8 /* Main.storyboard */; };
+		180214E81BD48E41006E24E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 180214E71BD48E41006E24E8 /* Assets.xcassets */; };
+		180214EB1BD48E41006E24E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 180214E91BD48E41006E24E8 /* LaunchScreen.storyboard */; };
+		180214F61BD48E41006E24E8 /* HLLContactsDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 180214F51BD48E41006E24E8 /* HLLContactsDemoTests.m */; };
+		180215011BD48E41006E24E8 /* HLLContactsDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 180215001BD48E41006E24E8 /* HLLContactsDemoUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		180214F21BD48E41006E24E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 180214D01BD48E41006E24E8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 180214D71BD48E41006E24E8;
+			remoteInfo = HLLContactsDemo;
+		};
+		180214FD1BD48E41006E24E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 180214D01BD48E41006E24E8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 180214D71BD48E41006E24E8;
+			remoteInfo = HLLContactsDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		180214D81BD48E41006E24E8 /* HLLContactsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HLLContactsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		180214DC1BD48E41006E24E8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		180214DE1BD48E41006E24E8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		180214DF1BD48E41006E24E8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		180214E11BD48E41006E24E8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		180214E21BD48E41006E24E8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		180214E51BD48E41006E24E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		180214E71BD48E41006E24E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		180214EA1BD48E41006E24E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		180214EC1BD48E41006E24E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		180214F11BD48E41006E24E8 /* HLLContactsDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HLLContactsDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		180214F51BD48E41006E24E8 /* HLLContactsDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLLContactsDemoTests.m; sourceTree = "<group>"; };
+		180214F71BD48E41006E24E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		180214FC1BD48E41006E24E8 /* HLLContactsDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HLLContactsDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		180215001BD48E41006E24E8 /* HLLContactsDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLLContactsDemoUITests.m; sourceTree = "<group>"; };
+		180215021BD48E41006E24E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		180214D51BD48E41006E24E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		180214EE1BD48E41006E24E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		180214F91BD48E41006E24E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		180214CF1BD48E41006E24E8 = {
+			isa = PBXGroup;
+			children = (
+				180214DA1BD48E41006E24E8 /* HLLContactsDemo */,
+				180214F41BD48E41006E24E8 /* HLLContactsDemoTests */,
+				180214FF1BD48E41006E24E8 /* HLLContactsDemoUITests */,
+				180214D91BD48E41006E24E8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		180214D91BD48E41006E24E8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				180214D81BD48E41006E24E8 /* HLLContactsDemo.app */,
+				180214F11BD48E41006E24E8 /* HLLContactsDemoTests.xctest */,
+				180214FC1BD48E41006E24E8 /* HLLContactsDemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		180214DA1BD48E41006E24E8 /* HLLContactsDemo */ = {
+			isa = PBXGroup;
+			children = (
+				180214DE1BD48E41006E24E8 /* AppDelegate.h */,
+				180214DF1BD48E41006E24E8 /* AppDelegate.m */,
+				180214E11BD48E41006E24E8 /* ViewController.h */,
+				180214E21BD48E41006E24E8 /* ViewController.m */,
+				180214E41BD48E41006E24E8 /* Main.storyboard */,
+				180214E71BD48E41006E24E8 /* Assets.xcassets */,
+				180214E91BD48E41006E24E8 /* LaunchScreen.storyboard */,
+				180214EC1BD48E41006E24E8 /* Info.plist */,
+				180214DB1BD48E41006E24E8 /* Supporting Files */,
+			);
+			path = HLLContactsDemo;
+			sourceTree = "<group>";
+		};
+		180214DB1BD48E41006E24E8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				180214DC1BD48E41006E24E8 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		180214F41BD48E41006E24E8 /* HLLContactsDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				180214F51BD48E41006E24E8 /* HLLContactsDemoTests.m */,
+				180214F71BD48E41006E24E8 /* Info.plist */,
+			);
+			path = HLLContactsDemoTests;
+			sourceTree = "<group>";
+		};
+		180214FF1BD48E41006E24E8 /* HLLContactsDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				180215001BD48E41006E24E8 /* HLLContactsDemoUITests.m */,
+				180215021BD48E41006E24E8 /* Info.plist */,
+			);
+			path = HLLContactsDemoUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		180214D71BD48E41006E24E8 /* HLLContactsDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 180215051BD48E41006E24E8 /* Build configuration list for PBXNativeTarget "HLLContactsDemo" */;
+			buildPhases = (
+				180214D41BD48E41006E24E8 /* Sources */,
+				180214D51BD48E41006E24E8 /* Frameworks */,
+				180214D61BD48E41006E24E8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HLLContactsDemo;
+			productName = HLLContactsDemo;
+			productReference = 180214D81BD48E41006E24E8 /* HLLContactsDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		180214F01BD48E41006E24E8 /* HLLContactsDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 180215081BD48E41006E24E8 /* Build configuration list for PBXNativeTarget "HLLContactsDemoTests" */;
+			buildPhases = (
+				180214ED1BD48E41006E24E8 /* Sources */,
+				180214EE1BD48E41006E24E8 /* Frameworks */,
+				180214EF1BD48E41006E24E8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				180214F31BD48E41006E24E8 /* PBXTargetDependency */,
+			);
+			name = HLLContactsDemoTests;
+			productName = HLLContactsDemoTests;
+			productReference = 180214F11BD48E41006E24E8 /* HLLContactsDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		180214FB1BD48E41006E24E8 /* HLLContactsDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1802150B1BD48E41006E24E8 /* Build configuration list for PBXNativeTarget "HLLContactsDemoUITests" */;
+			buildPhases = (
+				180214F81BD48E41006E24E8 /* Sources */,
+				180214F91BD48E41006E24E8 /* Frameworks */,
+				180214FA1BD48E41006E24E8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				180214FE1BD48E41006E24E8 /* PBXTargetDependency */,
+			);
+			name = HLLContactsDemoUITests;
+			productName = HLLContactsDemoUITests;
+			productReference = 180214FC1BD48E41006E24E8 /* HLLContactsDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		180214D01BD48E41006E24E8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = HLL;
+				TargetAttributes = {
+					180214D71BD48E41006E24E8 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					180214F01BD48E41006E24E8 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 180214D71BD48E41006E24E8;
+					};
+					180214FB1BD48E41006E24E8 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 180214D71BD48E41006E24E8;
+					};
+				};
+			};
+			buildConfigurationList = 180214D31BD48E41006E24E8 /* Build configuration list for PBXProject "HLLContactsDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 180214CF1BD48E41006E24E8;
+			productRefGroup = 180214D91BD48E41006E24E8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				180214D71BD48E41006E24E8 /* HLLContactsDemo */,
+				180214F01BD48E41006E24E8 /* HLLContactsDemoTests */,
+				180214FB1BD48E41006E24E8 /* HLLContactsDemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		180214D61BD48E41006E24E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				180214EB1BD48E41006E24E8 /* LaunchScreen.storyboard in Resources */,
+				180214E81BD48E41006E24E8 /* Assets.xcassets in Resources */,
+				180214E61BD48E41006E24E8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		180214EF1BD48E41006E24E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		180214FA1BD48E41006E24E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		180214D41BD48E41006E24E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				180214E31BD48E41006E24E8 /* ViewController.m in Sources */,
+				180214E01BD48E41006E24E8 /* AppDelegate.m in Sources */,
+				180214DD1BD48E41006E24E8 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		180214ED1BD48E41006E24E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				180214F61BD48E41006E24E8 /* HLLContactsDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		180214F81BD48E41006E24E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				180215011BD48E41006E24E8 /* HLLContactsDemoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		180214F31BD48E41006E24E8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 180214D71BD48E41006E24E8 /* HLLContactsDemo */;
+			targetProxy = 180214F21BD48E41006E24E8 /* PBXContainerItemProxy */;
+		};
+		180214FE1BD48E41006E24E8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 180214D71BD48E41006E24E8 /* HLLContactsDemo */;
+			targetProxy = 180214FD1BD48E41006E24E8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		180214E41BD48E41006E24E8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				180214E51BD48E41006E24E8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		180214E91BD48E41006E24E8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				180214EA1BD48E41006E24E8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		180215031BD48E41006E24E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		180215041BD48E41006E24E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		180215061BD48E41006E24E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = HLLContactsDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.Yrocky.HLLContactsDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		180215071BD48E41006E24E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = HLLContactsDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.Yrocky.HLLContactsDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		180215091BD48E41006E24E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = HLLContactsDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.Yrocky.HLLContactsDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HLLContactsDemo.app/HLLContactsDemo";
+			};
+			name = Debug;
+		};
+		1802150A1BD48E41006E24E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = HLLContactsDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.Yrocky.HLLContactsDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HLLContactsDemo.app/HLLContactsDemo";
+			};
+			name = Release;
+		};
+		1802150C1BD48E41006E24E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = HLLContactsDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.Yrocky.HLLContactsDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = HLLContactsDemo;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		1802150D1BD48E41006E24E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = HLLContactsDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.Yrocky.HLLContactsDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = HLLContactsDemo;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		180214D31BD48E41006E24E8 /* Build configuration list for PBXProject "HLLContactsDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				180215031BD48E41006E24E8 /* Debug */,
+				180215041BD48E41006E24E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		180215051BD48E41006E24E8 /* Build configuration list for PBXNativeTarget "HLLContactsDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				180215061BD48E41006E24E8 /* Debug */,
+				180215071BD48E41006E24E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		180215081BD48E41006E24E8 /* Build configuration list for PBXNativeTarget "HLLContactsDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				180215091BD48E41006E24E8 /* Debug */,
+				1802150A1BD48E41006E24E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1802150B1BD48E41006E24E8 /* Build configuration list for PBXNativeTarget "HLLContactsDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1802150C1BD48E41006E24E8 /* Debug */,
+				1802150D1BD48E41006E24E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 180214D01BD48E41006E24E8 /* Project object */;
+}
