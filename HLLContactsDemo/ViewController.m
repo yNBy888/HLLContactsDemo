@@ -123,7 +123,7 @@ static NSString * const identifier = @"contactIdentifier";
 //    CNContactFetchRequest * fetchRequest = [[CNContactFetchRequest alloc] initWithKeysToFetch:fetch];
 //    NSLog(@"obj:%@",obj);
 //    [self.navigationController presentViewController:contactViewController animated:YES completion:nil];
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 #pragma mark - UITableViewDataSource

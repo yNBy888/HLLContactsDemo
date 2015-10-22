@@ -18,20 +18,32 @@
 
 - (void)configureCellWithLabeledVaule:(id)labeledVaule{
 
+    
+    
     CNLabeledValue * labelVaule = (CNLabeledValue *)labeledVaule;
     CNPhoneNumber * phoneNumber = labelVaule.value;
     NSString * label = labelVaule.label;
-    NSRange startRange = [label rangeOfString:@"_$!<"];
-    BOOL hasStart = [label hasPrefix:@"_$!<"];
-    BOOL hasEnd = [label hasSuffix:@">!$_"];
-    if (!hasEnd || !hasStart) {
-        self.labelLabel.text = label;
+    
+    NSString * start = @"_$!<";
+    NSString * end = @">!$_";
+    
+    NSString * predicateString = [NSString stringWithFormat:@"self beginswith '%@' and self endswith '%@'",start,end];
+    NSPredicate * labelPredicate = [NSPredicate predicateWithFormat:predicateString];
+    
+    NSMutableString * newLabel = [NSMutableString stringWithString:label];
+    
+    if ([labelPredicate evaluateWithObject:label]) {
+        NSLog(@"yes ,its");
+        NSRange startRange = [newLabel rangeOfString:start];
+        [newLabel deleteCharactersInRange:startRange];
+        NSRange endRange = [newLabel rangeOfString:end];
+        [newLabel deleteCharactersInRange:endRange];
+        
     }else{
-        NSString * tempString = [label substringFromIndex:startRange.length];
-        NSRange endRange = [tempString rangeOfString:@">!$_"];
-        tempString = [tempString substringToIndex:endRange.location];
-        self.labelLabel.text = tempString ? : @" ";
+        NSLog(@"no ,itnot");
     }
+    self.labelLabel.text = newLabel;
+
     self.phoneNumberLabel.text = phoneNumber.stringValue;
 }
 @end
