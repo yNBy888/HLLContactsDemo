@@ -106,26 +106,41 @@ static NSString * const identifier = @"contactIdentifier";
 #pragma mark - UITableViewDelegate
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
-    [self performSegueWithIdentifier:@"detail" sender:nil];
-//    NSArray * contactArray = [self.contacts objectAtIndex:indexPath.row];
-//    CNContact * contact = [contactArray objectAtIndex:0];
-//    id obj = [CNContactViewController descriptorForRequiredKeys];
-//    CNContactViewController * contactViewController = [CNContactViewController viewControllerForContact:contact];
-//    
-//    NSArray * fetch = @[CNContactNicknameKey,
-//                        CNContactImageDataKey,
-//                        CNContactGivenNameKey,
-//                        CNContactFamilyNameKey,
-//                        CNContactPhoneNumbersKey,
-//                        CNContactOrganizationNameKey,
-//                        CNContactEmailAddressesKey,
-//                        CNContactDatesKey];
-//    CNContactFetchRequest * fetchRequest = [[CNContactFetchRequest alloc] initWithKeysToFetch:fetch];
-//    NSLog(@"obj:%@",obj);
-//    [self.navigationController presentViewController:contactViewController animated:YES completion:nil];
-//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    UIAlertController * alertController = [UIAlertController alertControllerWithTitle:@"⚠️" message:@"Choice Your Choice!" preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction * systemAction = [UIAlertAction actionWithTitle:@"System" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self viewControllerGotoSystemContactUIWithIndexPath:indexPath];
+    }];
+    
+    UIAlertAction * customAction = [UIAlertAction actionWithTitle:@"Custom" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self viewControllerGotoCustomContactUI];
+    }];
+    [alertController addAction:systemAction];
+    [alertController addAction:customAction];
+    [self.navigationController presentViewController:alertController animated:YES completion:nil];
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
+- (void) viewControllerGotoSystemContactUIWithIndexPath:(NSIndexPath *)indexPath{
+
+    NSArray * contactArray = [self.contacts objectAtIndex:indexPath.row];
+    CNContact * contact = [contactArray objectAtIndex:0];
+    CNMutableContact * mutableContact = [[CNMutableContact alloc] init];
+    mutableContact.contactType = CNContactTypePerson;
+    mutableContact.givenName = contact.givenName;
+    mutableContact.familyName = contact.familyName;
+    mutableContact.phoneNumbers = contact.phoneNumbers;
+    mutableContact.emailAddresses = contact.emailAddresses;
+    
+    CNContactViewController * contactViewController = [CNContactViewController viewControllerForContact:mutableContact];
+    contactViewController.title = @"联系人详情";
+    contactViewController.allowsEditing = NO;
+    [self.navigationController pushViewController:contactViewController animated:YES];
+}
+- (void) viewControllerGotoCustomContactUI{
+    [self performSegueWithIdentifier:@"detail" sender:nil];
+}
 #pragma mark - UITableViewDataSource
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 

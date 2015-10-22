@@ -37,10 +37,7 @@
         NSRange startRange = [newLabel rangeOfString:start];
         [newLabel deleteCharactersInRange:startRange];
         NSRange endRange = [newLabel rangeOfString:end];
-        [newLabel deleteCharactersInRange:endRange];
-        
-    }else{
-        NSLog(@"no ,itnot");
+        [newLabel deleteCharactersInRange:endRange];   
     }
     self.labelLabel.text = newLabel;
 
