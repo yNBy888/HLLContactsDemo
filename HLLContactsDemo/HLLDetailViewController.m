@@ -61,7 +61,8 @@
 
     HLLPhone * phone = [self.phones objectAtIndex:indexPath.row];
     
-    [cell configureCellWithLabeledVaule:phone];
+    [cell configureCellWithPhone:phone];
+    
     return cell;
 }
 @end

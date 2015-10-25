@@ -16,7 +16,7 @@
 @end
 @implementation HLLLabeledCell
 
-- (void)configureCellWithLabeledVaule:(HLLPhone *)phone{
+- (void)configureCellWithPhone:(HLLPhone *)phone{
 
     self.labelLabel.text = phone.phoneLabel;
     self.phoneNumberLabel.text = phone.phoneNumber;

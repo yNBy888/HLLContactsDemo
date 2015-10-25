@@ -12,6 +12,6 @@
 
 @interface HLLLabeledCell : UITableViewCell
 
-- (void) configureCellWithLabeledVaule:(HLLPhone *)phone;
+- (void)configureCellWithPhone:(HLLPhone *)phone;
 
 @end
