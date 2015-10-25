@@ -15,6 +15,7 @@
 @end
 
 @interface HLLDetailViewModel : NSObject
+
 @property (nonatomic ,strong) NSData    * imageData;
 @property (nonatomic ,strong) NSString  * name;
 // all CNLabeledValue obj
