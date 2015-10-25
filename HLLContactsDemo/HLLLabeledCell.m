@@ -7,7 +7,7 @@
 //
 
 #import "HLLLabeledCell.h"
-#import <Contacts/Contacts.h>
+
 
 @interface HLLLabeledCell ()
 @property (weak, nonatomic) IBOutlet UILabel *labelLabel;
@@ -16,31 +16,9 @@
 @end
 @implementation HLLLabeledCell
 
-- (void)configureCellWithLabeledVaule:(id)labeledVaule{
+- (void)configureCellWithLabeledVaule:(HLLPhone *)phone{
 
-    
-    
-    CNLabeledValue * labelVaule = (CNLabeledValue *)labeledVaule;
-    CNPhoneNumber * phoneNumber = labelVaule.value;
-    NSString * label = labelVaule.label;
-    
-    NSString * start = @"_$!<";
-    NSString * end = @">!$_";
-    
-    NSString * predicateString = [NSString stringWithFormat:@"self beginswith '%@' and self endswith '%@'",start,end];
-    NSPredicate * labelPredicate = [NSPredicate predicateWithFormat:predicateString];
-    
-    NSMutableString * newLabel = [NSMutableString stringWithString:label];
-    
-    if ([labelPredicate evaluateWithObject:label]) {
-        NSLog(@"yes ,its");
-        NSRange startRange = [newLabel rangeOfString:start];
-        [newLabel deleteCharactersInRange:startRange];
-        NSRange endRange = [newLabel rangeOfString:end];
-        [newLabel deleteCharactersInRange:endRange];   
-    }
-    self.labelLabel.text = newLabel;
-
-    self.phoneNumberLabel.text = phoneNumber.stringValue;
+    self.labelLabel.text = phone.phoneLabel;
+    self.phoneNumberLabel.text = phone.phoneNumber;
 }
 @end

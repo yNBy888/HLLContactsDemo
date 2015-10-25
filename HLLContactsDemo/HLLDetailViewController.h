@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <Contacts/Contacts.h>
 
+@class HLLDetailViewModel;
 @interface HLLDetailViewController : UIViewController
-
+@property (nonatomic ,strong) HLLDetailViewModel * viewModel;
 @property (nonatomic ,strong) CNContact * contact;
 @end

@@ -12,12 +12,16 @@
 #import "HLLDetailViewController.h"
 #import "ODRefreshControl.h"
 
+#import "HLLContactViewModel.h"
+
 static NSString * const identifier = @"contactIdentifier";
 
 @interface ViewController ()<UITableViewDataSource,UITableViewDelegate,CNContactPickerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) ODRefreshControl *myRefreshControl;
 @property (nonatomic ,strong) NSArray * contacts;
+
+@property (nonatomic ,strong) HLLContactViewModel * viewModel;
 @end
 
 @implementation ViewController
@@ -29,6 +33,8 @@ static NSString * const identifier = @"contactIdentifier";
     
     _myRefreshControl = [[ODRefreshControl alloc] initInScrollView:self.tableView];
     [_myRefreshControl addTarget:self action:@selector(fetchContactInfo) forControlEvents:UIControlEventValueChanged];
+    
+    _viewModel = [[HLLContactViewModel alloc] init];
 }
 - (void)viewDidAppear:(BOOL)animated{
 
@@ -49,45 +55,14 @@ static NSString * const identifier = @"contactIdentifier";
         if (self.contacts) {
             self.contacts = nil;
         }
-        self.contacts = [self _contacts];
+        self.contacts = [self.viewModel pullContacts];
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
             [_myRefreshControl endRefreshing];
         });
     });
-
 }
-- (NSArray *) _contacts{
-    
-    CNContactStore * store = [[CNContactStore alloc] init];
-    
-    NSMutableArray * contacts = [NSMutableArray array];
-    
-    NSArray * fetch = @[CNContactNicknameKey,
-                        CNContactImageDataKey,
-                        CNContactGivenNameKey,
-                        CNContactFamilyNameKey,
-                        CNContactPhoneNumbersKey,
-                        CNContactOrganizationNameKey,
-                        CNContactEmailAddressesKey,
-                        CNContactDatesKey];
-    CNContactFetchRequest * fetchRequest = [[CNContactFetchRequest alloc] initWithKeysToFetch:fetch];
-    
-    @try {
-        [store enumerateContactsWithFetchRequest:fetchRequest error:NULL usingBlock:^(CNContact * _Nonnull contact, BOOL * _Nonnull stop) {
-            [contacts addObject:@[contact]];
-        }];
-    }
-    @catch (NSException *exception) {
-        NSLog(@"exception:%@",exception.name);
-    }
-    @finally {
-        
-    }
-    
-    return contacts;
 
-}
 #pragma mark - segue action
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
 
@@ -98,7 +73,7 @@ static NSString * const identifier = @"contactIdentifier";
             
             NSArray * contactArray = [self.contacts objectAtIndex:selectedIndexPath.row];
             CNContact * contact = [contactArray objectAtIndex:0];
-            destinationViewController.contact = contact;
+            destinationViewController.viewModel = [self.viewModel fetchDetailViewModelWithContact:contact];
             destinationViewController.title = @"联系人详情";
         }
     }
@@ -110,16 +85,17 @@ static NSString * const identifier = @"contactIdentifier";
     
     UIAlertAction * systemAction = [UIAlertAction actionWithTitle:@"System" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [self viewControllerGotoSystemContactUIWithIndexPath:indexPath];
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
     }];
+    [self viewControllerGotoCustomContactUI];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     UIAlertAction * customAction = [UIAlertAction actionWithTitle:@"Custom" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [self viewControllerGotoCustomContactUI];
     }];
     [alertController addAction:systemAction];
     [alertController addAction:customAction];
-    [self.navigationController presentViewController:alertController animated:YES completion:nil];
+//    [self.navigationController presentViewController:alertController animated:YES completion:nil];
     
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 - (void) viewControllerGotoSystemContactUIWithIndexPath:(NSIndexPath *)indexPath{

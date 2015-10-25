@@ -21,6 +21,8 @@
 		1802151A1BD4BF65006E24E8 /* HLLLabeledCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 180215191BD4BF65006E24E8 /* HLLLabeledCell.m */; settings = {ASSET_TAGS = (); }; };
 		1802151C1BD4C3FD006E24E8 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1802151B1BD4C3FD006E24E8 /* icon.png */; settings = {ASSET_TAGS = (); }; };
 		180215201BD4DB32006E24E8 /* ODRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 1802151F1BD4DB32006E24E8 /* ODRefreshControl.m */; settings = {ASSET_TAGS = (); }; };
+		181094B71BDCBC9200E1540E /* HLLContactViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 181094B61BDCBC9200E1540E /* HLLContactViewModel.m */; settings = {ASSET_TAGS = (); }; };
+		181094BA1BDCBC9E00E1540E /* HLLDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 181094B91BDCBC9E00E1540E /* HLLDetailViewModel.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,10 @@
 		1802151B1BD4C3FD006E24E8 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		1802151E1BD4DB32006E24E8 /* ODRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODRefreshControl.h; sourceTree = "<group>"; };
 		1802151F1BD4DB32006E24E8 /* ODRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ODRefreshControl.m; sourceTree = "<group>"; };
+		181094B51BDCBC9200E1540E /* HLLContactViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLContactViewModel.h; sourceTree = "<group>"; };
+		181094B61BDCBC9200E1540E /* HLLContactViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLContactViewModel.m; sourceTree = "<group>"; };
+		181094B81BDCBC9E00E1540E /* HLLDetailViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLDetailViewModel.h; sourceTree = "<group>"; };
+		181094B91BDCBC9E00E1540E /* HLLDetailViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLDetailViewModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +135,10 @@
 				180215131BD4BAA2006E24E8 /* HLLDetailViewController.m */,
 				180215181BD4BF65006E24E8 /* HLLLabeledCell.h */,
 				180215191BD4BF65006E24E8 /* HLLLabeledCell.m */,
+				181094B51BDCBC9200E1540E /* HLLContactViewModel.h */,
+				181094B61BDCBC9200E1540E /* HLLContactViewModel.m */,
+				181094B81BDCBC9E00E1540E /* HLLDetailViewModel.h */,
+				181094B91BDCBC9E00E1540E /* HLLDetailViewModel.m */,
 				180214E71BD48E41006E24E8 /* Assets.xcassets */,
 				180214E91BD48E41006E24E8 /* LaunchScreen.storyboard */,
 				1802151D1BD4DB32006E24E8 /* ODRefreshControl */,
@@ -305,12 +315,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				181094B71BDCBC9200E1540E /* HLLContactViewModel.m in Sources */,
 				180214E31BD48E41006E24E8 /* ViewController.m in Sources */,
 				180214E01BD48E41006E24E8 /* AppDelegate.m in Sources */,
 				1802151A1BD4BF65006E24E8 /* HLLLabeledCell.m in Sources */,
 				180215141BD4BAA2006E24E8 /* HLLDetailViewController.m in Sources */,
 				180215201BD4DB32006E24E8 /* ODRefreshControl.m in Sources */,
 				180214DD1BD48E41006E24E8 /* main.m in Sources */,
+				181094BA1BDCBC9E00E1540E /* HLLDetailViewModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,6 +546,7 @@
 				180215071BD48E41006E24E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		180215081BD48E41006E24E8 /* Build configuration list for PBXNativeTarget "HLLContactsDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -542,6 +555,7 @@
 				1802150A1BD48E41006E24E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1802150B1BD48E41006E24E8 /* Build configuration list for PBXNativeTarget "HLLContactsDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -550,6 +564,7 @@
 				1802150D1BD48E41006E24E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

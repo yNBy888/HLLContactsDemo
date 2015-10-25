@@ -6,11 +6,12 @@
 //  Copyright © 2015年 HLL. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #define kCellIdentifier_Label @"HLLLabeledCell"
+#import <UIKit/UIKit.h>
+#import "HLLDetailViewModel.h"
 
 @interface HLLLabeledCell : UITableViewCell
 
+- (void) configureCellWithLabeledVaule:(HLLPhone *)phone;
 
-- (void) configureCellWithLabeledVaule:(id)labeledVaule;
 @end

@@ -8,54 +8,38 @@
 
 #import "HLLDetailViewController.h"
 #import "HLLLabeledCell.h"
+#import "HLLDetailViewModel.h"
+
 
 @interface HLLDetailViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UITableView *phoneTableView;
-@property (nonatomic ,strong) NSArray * phoneNumbers;
-@property (nonatomic ,strong) NSArray * emailAddresses;
+@property (nonatomic ,strong) NSArray * phones;
+
 @end
 
 @implementation HLLDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [self.phoneTableView registerClass:[HLLLabeledCell class] forCellReuseIdentifier:kCellIdentifier_Label];
-    if (self.contact.imageData) {
-        self.iconImageView.image = [UIImage imageWithData:self.contact.imageData];
-    }
-    NSString * nickName = self.contact.nickname;
-    NSString * giveName = self.contact.givenName;
-    NSString * familyName = self.contact.familyName;
-    NSString * organizationName = self.contact.organizationName;
-    
-    if (nickName.length) {
-        self.nameLabel.text = nickName;
-    }else{
-        if (familyName.length) {
-            self.nameLabel.text = [NSString stringWithFormat:@"%@%@",familyName,giveName];
-        }else if(giveName.length){
-            self.nameLabel.text = [NSString stringWithFormat:@"%@",giveName];
-        }else{
-            self.nameLabel.text = [NSString stringWithFormat:@"%@",organizationName];
-        }
-    }
 
-    self.phoneNumbers = self.contact.phoneNumbers;
-    self.emailAddresses = self.contact.emailAddresses;
-//    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Pattern.png"]];
+    if (self.viewModel.imageData) {
+        self.iconImageView.image = [UIImage imageWithData:self.viewModel.imageData];
+    }
+    self.nameLabel.text = self.viewModel.name;
+    
+    self.phones = [self.viewModel phonesWithPhoneNumbers:self.viewModel.phoneNumbers];
+
     [self.phoneTableView reloadData];
 }
 #pragma mark - UITableViewDelegate
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
-    CNLabeledValue * labeledValue = [self.phoneNumbers objectAtIndex:indexPath.row];
-
-    CNPhoneNumber * phoneNumber = labeledValue.value;
+    HLLPhone * phone = [self.phones objectAtIndex:indexPath.row];
     
-    NSURL * url = [NSURL URLWithString:[NSString stringWithFormat: @"telprompt://%@",phoneNumber.stringValue]];
+    NSURL * url = [NSURL URLWithString:[NSString stringWithFormat: @"telprompt://%@",phone.phoneNumber]];
     
     [[UIApplication sharedApplication] openURL:url];
     
@@ -69,13 +53,15 @@
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
-    return self.phoneNumbers.count;
+    return self.phones.count;
 }
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
     HLLLabeledCell * cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier_Label forIndexPath:indexPath];
-    CNLabeledValue * labeledValue = [self.phoneNumbers objectAtIndex:indexPath.row];
-    [cell configureCellWithLabeledVaule:labeledValue];
+
+    HLLPhone * phone = [self.phones objectAtIndex:indexPath.row];
+    
+    [cell configureCellWithLabeledVaule:phone];
     return cell;
 }
 @end
